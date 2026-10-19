@@ -1,4 +1,6 @@
-# EDA_Assignment
+EDA_Assignment
+NAME : POORVISHA S
+ROLLNO : 24AD078
 # Breast Cancer EDA and MLP Classification
 
 ## Project Overview
