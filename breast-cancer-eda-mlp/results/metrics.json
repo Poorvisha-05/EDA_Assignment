@@ -1,0 +1,106 @@
+{
+  "backend": "Keras/TensorFlow 2.21.0",
+  "architecture": {
+    "input": 30,
+    "hidden": [
+      16,
+      8
+    ],
+    "dropout": 0.3,
+    "learning_rate": 0.01,
+    "output": "1 sigmoid unit",
+    "optimizer": "Adam",
+    "loss": "binary cross-entropy",
+    "batch_size": 32,
+    "max_epochs": 100,
+    "early_stopping_patience": 15
+  },
+  "epochs_run": 24,
+  "best_epoch": 9,
+  "test": {
+    "accuracy": 0.9534883720930233,
+    "precision": 0.9629629629629629,
+    "recall": 0.9629629629629629,
+    "f1": 0.9629629629629629,
+    "auc": 0.990162037037037,
+    "tn": 30,
+    "fp": 2,
+    "fn": 2,
+    "tp": 52
+  },
+  "baseline_logreg_test": {
+    "accuracy": 0.9883720930232558,
+    "auc": 0.9947916666666666
+  },
+  "final_train_acc": 0.9899497628211975,
+  "final_val_acc": 0.9882352948188782,
+  "top_features_mlp": {
+    "worst radius": 0.0247,
+    "worst area": 0.0182,
+    "worst perimeter": 0.0176,
+    "mean fractal dimension": 0.0135,
+    "mean perimeter": 0.0135
+  },
+  "top_features_rf": {
+    "worst area": 0.1407,
+    "worst perimeter": 0.1399,
+    "worst concave points": 0.1235,
+    "worst radius": 0.0834,
+    "mean concave points": 0.0804
+  },
+  "tuning_top3": [
+    {
+      "hidden_units": "(16, 8)",
+      "dropout": 0.3,
+      "learning_rate": 0.01,
+      "best_val_loss": 0.0128,
+      "best_val_acc": 1.0,
+      "epochs_run": 28
+    },
+    {
+      "hidden_units": "(64, 32)",
+      "dropout": 0.2,
+      "learning_rate": 0.01,
+      "best_val_loss": 0.0192,
+      "best_val_acc": 0.9882,
+      "epochs_run": 22
+    },
+    {
+      "hidden_units": "(32, 16)",
+      "dropout": 0.3,
+      "learning_rate": 0.01,
+      "best_val_loss": 0.0195,
+      "best_val_acc": 0.9882,
+      "epochs_run": 41
+    }
+  ],
+  "tuning_n_configs": 12,
+  "classification_report": {
+    "Malignant": {
+      "precision": 0.9375,
+      "recall": 0.9375,
+      "f1-score": 0.9375,
+      "support": 32.0
+    },
+    "Benign": {
+      "precision": 0.9629629629629629,
+      "recall": 0.9629629629629629,
+      "f1-score": 0.9629629629629629,
+      "support": 54.0
+    },
+    "accuracy": 0.9534883720930233,
+    "macro avg": {
+      "precision": 0.9502314814814814,
+      "recall": 0.9502314814814814,
+      "f1-score": 0.9502314814814814,
+      "support": 86.0
+    },
+    "weighted avg": {
+      "precision": 0.9534883720930233,
+      "recall": 0.9534883720930233,
+      "f1-score": 0.9534883720930233,
+      "support": 86.0
+    }
+  },
+  "model_summary": "Model: \"sequential\"\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2513\n\u2503 Layer  \u2503 Ou\u2026 \u2503 P\u2026 \u2503\n\u2503 (type) \u2503 Sh\u2026 \u2503  # \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2529\n\u2502 dense  \u2502 (N\u2026 \u2502 4\u2026 \u2502\n\u2502 (Dens\u2026 \u2502 16) \u2502    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2524\n\u2502 dropo\u2026 \u2502 (N\u2026 \u2502  0 \u2502\n\u2502 (Drop\u2026 \u2502 16) \u2502    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2524\n\u2502 dense\u2026 \u2502 (N\u2026 \u2502 1\u2026 \u2502\n\u2502 (Dens\u2026 \u2502 8)  \u2502    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2524\n\u2502 dropo\u2026 \u2502 (N\u2026 \u2502  0 \u2502\n\u2502 (Drop\u2026 \u2502 8)  \u2502    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2524\n\u2502 dense\u2026 \u2502 (N\u2026 \u2502  9 \u2502\n\u2502 (Dens\u2026 \u2502 1)  \u2502    \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n Total params: 1,925 \n(7.52 KB)\n Trainable params: 641 \n(2.50 KB)\n Non-trainable params: 0 \n(0.00 B)\n Optimizer params: 1,284 \n(5.02 KB)\n"
+}
