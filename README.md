@@ -2,6 +2,7 @@ EDA_Assignment
 # NAME : POORVISHA S
 # ROLLNO : 24AD078
 # Breast Cancer EDA and MLP Classification
+Dataset Link: https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic
 
 ## Project Overview
 This project focuses on Exploratory Data Analysis (EDA) and Machine Learning to analyze a breast cancer dataset and classify tumors as benign or malignant. Data analysis and visualization are used to understand the dataset, and a Multi-Layer Perceptron (MLP) classifier is used for prediction.
